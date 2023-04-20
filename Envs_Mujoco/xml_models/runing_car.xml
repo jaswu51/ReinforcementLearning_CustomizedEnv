@@ -1,0 +1,31 @@
+<mujoco>
+    <option gravity='0 0.0 0'/>
+    <worldbody>
+      <light diffuse="1.5 .5 1.5" pos="0 0 5" dir="0 0.2 -1"/>
+      <geom type="plane" size="10 10 0.1" rgba="1 1 1 1"/>
+      <body pos="1 1 0.1" euler='0 90 0'>
+        <joint type='free'/>
+        <geom type="box" size=".1 .4 .8" rgba="1 .1 0 1"/>
+      </body>
+      <body pos="1.5 0.6 0.2" euler='90 0 0'>
+        <joint name='left_join' type="hinge" axis='0 0 1'/>
+        <geom type="cylinder" size=".2 .05" rgba="1 .1 0 1"/>
+      </body>
+      <body pos="1.5 1.4 0.2" euler='90 0 0'>
+        <joint name='right_join' type="hinge" axis='0 0 1'/>
+        <geom type="cylinder" size=".2 .05" rgba="1 .1 0 1"/>
+      </body>
+      <body pos="0.5 0.6 0.2" euler='90 0 0'>
+        <joint name='left_front_join' type="hinge" axis='0 0 1'/>
+        <geom type="cylinder" size=".2 .05" rgba="1 .1 0 1"/>
+      </body>
+      <body pos="0.5 1.4 0.2" euler='90 0 0'>
+        <joint name='right_front_join' type="hinge" axis='0 0 1'/>
+        <geom type="cylinder" size=".2 .05" rgba="1 .1 0 1"/>
+      </body>
+    </worldbody>
+    <actuator>
+      <velocity name='left-v' joint='left_join' kv='100'/>
+      <velocity name='right-v' joint='right_join' kv='100'/>
+    </actuator>
+  </mujoco>

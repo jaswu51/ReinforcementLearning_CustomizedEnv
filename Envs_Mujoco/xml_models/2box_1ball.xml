@@ -1,0 +1,28 @@
+<mujoco>
+      <!-- set some defaults for units and lighting -->
+      <compiler angle="radian" meshdir="meshes"/>
+
+      <!-- 导入STL文件 -->
+      <!-- <asset>
+          <mesh file="base.STL" />
+          <mesh file="link1.STL" />
+          <mesh file="link2.STL" />
+      </asset> -->
+    <option gravity='0 0.1 -0.2'/>
+    <worldbody>
+      <light diffuse="1.5 .5 1.5" pos="0 0 5" dir="0 0.2 -1"/>
+      <geom type="plane" size="10 10 0.1" rgba="1 1 1 1"/>
+      <body pos="0 0 1">
+        <joint type="free"/>
+        <geom type="box" size=".1 .2 .3" rgba="0 .9 0 1"/>
+      </body>
+      <body pos="1 0 2" euler='0 90 0'>
+        <joint type="free"/>
+        <geom type="box" size=".1 .2 .2" rgba="1 .1 0 1"/>
+      </body>
+      <body pos="1 0 1.8" euler='0 90 0'>
+        <joint type="free"/>
+        <geom type="sphere" size=".1" rgba="1 .1 0 1"/>
+      </body>
+    </worldbody>
+  </mujoco>

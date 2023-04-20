@@ -1,0 +1,29 @@
+<mujoco>
+    <!-- set some defaults for units and lighting -->
+    <compiler angle="radian" meshdir="meshes"/>
+
+    <!-- 导入STL文件 -->
+    <!-- <asset>
+        <mesh file="base.STL" />
+        <mesh file="link1.STL" />
+        <mesh file="link2.STL" />
+    </asset> -->
+  <option gravity='0 0.1 -0.2'/>
+  <worldbody>
+    <light diffuse="1.5 .5 1.5" pos="0 0 5" dir="0 0.2 -1"/>
+    <geom type="plane" size="10 10 0.1" rgba="1 1 1 1"/>
+    <body name="B10" pos="0 0 1">
+        <freejoint/>
+        <composite type="rope" count="21 1 1" spacing="0.04" offset="0 0 2">
+            <joint kind="main" damping="0.005"/>
+            <geom type="capsule" size=".01 .015" rgba=".8 .2 .1 1"/>
+        </composite>
+        <composite type="grid" count="9 9 1" spacing="0.05" offset="0 0 1">
+            <skin material="matcarpet" inflate="0.001" subgrid="3" texcoord="true"/>
+            <geom size=".02"/>
+            <pin coord="0 0"/>
+            <pin coord="8 0"/>
+        </composite>
+    </body>
+  </worldbody>
+</mujoco>
